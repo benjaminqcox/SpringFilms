@@ -22,11 +22,19 @@ public class FilmController {
     public  List<Film> films = new ArrayList<Film>();
 
     @PostMapping("/create")
-    public ResponseEntity<Film> create(@RequestBody Film film) {
-        System.out.println("Adding film: " + film);
-        films.add(film);
+    public ResponseEntity<Film> create(@RequestBody Film newFilm) {
+        System.out.println("Adding film: " + newFilm);
+        films.add(newFilm);
         Film filmCreated = films.get(films.size() - 1);
         return new ResponseEntity<>(filmCreated, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/createMultiple")
+    public ResponseEntity<List<Film>> create(@RequestBody List<Film> newFilms) {
+        System.out.println("Adding films: " + newFilms);
+        films.addAll(newFilms);
+        List<Film> filmsCreated = films.subList(films.size() - newFilms.size(), films.size());
+        return new ResponseEntity<>(filmsCreated, HttpStatus.CREATED);
     }
 
     @GetMapping("/getAll")
