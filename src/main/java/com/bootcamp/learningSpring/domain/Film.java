@@ -3,7 +3,7 @@ package com.bootcamp.learningSpring.domain;
 public class Film {
     private Integer year;
 
-    private String name;
+    private String title;
 
     private String genre;
 
@@ -11,9 +11,9 @@ public class Film {
 
     }
 
-    public Film(Integer year, String name, String genre) {
+    public Film(Integer year, String title, String genre) {
         this.year = year;
-        this.name = name;
+        this.title = title;
         this.genre = genre;
     }
 
@@ -25,12 +25,12 @@ public class Film {
         this.year = year;
     }
 
-    public String getName() {
-        return this.name;
+    public String getTitle() {
+        return this.title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getGenre() {
@@ -43,7 +43,7 @@ public class Film {
 
     @Override
     public String toString() {
-        return "Film: \n\tName: " + getName() + "\n\tYear: " + getYear() + "\n\tGenre: " + getGenre();
+        return "Film: \n\ttitle: " + getTitle() + "\n\tYear: " + getYear() + "\n\tGenre: " + getGenre();
     }
 
 }
