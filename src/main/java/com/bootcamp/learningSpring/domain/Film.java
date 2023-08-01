@@ -1,6 +1,11 @@
 package com.bootcamp.learningSpring.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 public class Film {
@@ -10,10 +15,16 @@ public class Film {
     private Integer id;
 
     @Column(name="releaseYear")
+    @NotNull
+    @Range(min=1850, max=2100)
     private Integer year;
 
+    @NotEmpty
+    @Size(max=32)
     private String title;
 
+    @NotNull
+    @Size(max=32)
     private String genre;
 
     public Film() {

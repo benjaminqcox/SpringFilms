@@ -59,4 +59,10 @@ public class FilmServiceList implements FilmService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getFilms'");
     }
+
+    @Override
+    public List<Film> getFilmsByTitle(String title) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getFilmsByTitle'");
+    }
 }

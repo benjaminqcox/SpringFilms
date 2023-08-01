@@ -1,6 +1,5 @@
 package com.bootcamp.learningSpring.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Primary;
@@ -8,6 +7,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.bootcamp.learningSpring.domain.Film;
+import com.bootcamp.learningSpring.exceptions.FilmNotFoundException;
 import com.bootcamp.learningSpring.repos.FilmRepo;
 
 @Primary
@@ -37,12 +37,12 @@ public class FilmServiceDB implements FilmService {
 
     @Override
     public Film getFilmById(Integer id) {
-        return this.repo.findById(id).get();
+        return this.repo.findById(id).orElseThrow(() -> new FilmNotFoundException());
     }
 
     @Override
     public Film removeFilmById(Integer id) {
-        Film filmRemoved = this.repo.findById(id).get();
+        Film filmRemoved = this.repo.findById(id).orElseThrow(FilmNotFoundException::new);
         this.repo.deleteById(id);
         return filmRemoved;
     }
