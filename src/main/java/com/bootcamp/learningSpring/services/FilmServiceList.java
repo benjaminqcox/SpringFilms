@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.bootcamp.learningSpring.domain.Film;
 
-@Primary
 @Service
 public class FilmServiceList implements FilmService {
     public List<Film> films = new ArrayList<Film>();

@@ -2,10 +2,12 @@ package com.bootcamp.learningSpring.services;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.bootcamp.learningSpring.domain.Film;
 
+@Primary
 @Service
 public class FilmServiceDB implements FilmService {
 
