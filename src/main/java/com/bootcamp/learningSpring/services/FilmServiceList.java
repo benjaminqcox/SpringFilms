@@ -50,12 +50,6 @@ public class FilmServiceList implements FilmService {
     }
 
     @Override
-    public List<Film> getAllFilmsByTitle(String title) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllFilmsByTitle'");
-    }
-
-    @Override
     public Film removeFilmById(Integer id) {
         return films.remove((int) id);
     }
