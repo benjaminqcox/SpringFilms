@@ -2,8 +2,6 @@ package com.bootcamp.learningSpring.domain;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.Columns;
-
 @Entity
 public class Film {
 

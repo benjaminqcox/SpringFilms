@@ -3,7 +3,6 @@ package com.bootcamp.learningSpring.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.bootcamp.learningSpring.domain.Film;
@@ -34,16 +33,12 @@ public class FilmServiceList implements FilmService {
     }
 
     @Override
-    public Film getFilm(int id) {
-        Film filmFound = films.get(id);
+    public Film getFilmById(Integer id) {
+        Film filmFound = films.get((int) id);
         System.out.println(filmFound);
         return filmFound;
     }
 
-    @Override
-    public Film removeFilm(int id) {
-        return films.remove((int) id);
-    }
 
     @Override
     public Boolean remove(String title, String genre, Integer year) {
@@ -52,5 +47,22 @@ public class FilmServiceList implements FilmService {
         films.removeIf(f -> f.getTitle().equals(title) || f.getGenre().equals(genre) || f.getYear().equals(year));
         System.out.println("New films list:\n" + films);
         return films.size() < initSize;
+    }
+
+    @Override
+    public List<Film> getAllFilmsByTitle(String title) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllFilmsByTitle'");
+    }
+
+    @Override
+    public Film removeFilmById(Integer id) {
+        return films.remove((int) id);
+    }
+
+    @Override
+    public List<Film> getFilms(Film film) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getFilms'");
     }
 }

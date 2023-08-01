@@ -20,6 +20,13 @@ import com.bootcamp.learningSpring.services.FilmService;
 @RequestMapping("films/")
 public class FilmController {
     
+    /*
+
+    public Film removeFilmById(Integer id);
+
+    public Boolean remove(String title, String genre, Integer year);
+     */
+
     private FilmService service;
 
     public FilmController(FilmService service) {
@@ -43,12 +50,22 @@ public class FilmController {
 
     @GetMapping("/get/{id}")
     public Film getFilm(@PathVariable int id) {
-        return this.service.getFilm(id);
+        return this.service.getFilmById(id);
+    }
+
+    @GetMapping("/getByTitle/{title}")
+    public List<Film> getFilm(@PathVariable String title) {
+        return this.service.getFilmsByTitle(title);
+    }
+
+    @GetMapping("/getFilms")
+    public List<Film> getFilms(@RequestBody Film film) {
+            return this.service.getFilms(film);
     }
 
     @DeleteMapping("/remove/{id}")
     public Film removeFilm(@PathVariable int id) {
-        return this.service.removeFilm(id);
+        return this.service.removeFilmById(id);
     }
 
     @DeleteMapping("/remove")
