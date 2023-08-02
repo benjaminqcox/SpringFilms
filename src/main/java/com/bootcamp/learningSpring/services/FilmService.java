@@ -20,6 +20,6 @@ public interface FilmService {
 
     public Film removeFilmById(Integer id);
 
-    public Boolean remove(String title, String genre, Integer year);
+    public List<Film> remove(Film f);
 
 }

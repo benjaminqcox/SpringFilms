@@ -41,12 +41,12 @@ public class FilmServiceList implements FilmService {
 
 
     @Override
-    public Boolean remove(String title, String genre, Integer year) {
+    public List<Film> remove(Film f) {
         int initSize = films.size();
         System.out.println("Current film list:\n" + films);
-        films.removeIf(f -> f.getTitle().equals(title) || f.getGenre().equals(genre) || f.getYear().equals(year));
+        //films.removeIf(f -> f.getTitle().equals(title) || f.getGenre().equals(genre) || f.getYear().equals(year));
         System.out.println("New films list:\n" + films);
-        return films.size() < initSize;
+        return List.of(f);//films.size() < initSize;
     }
 
     @Override

@@ -60,7 +60,7 @@ public class FilmController {
     }
 
     @GetMapping("/getFilms")
-    public List<Film> getFilms(@RequestBody @Validated Film film) {
+    public List<Film> getFilms(@RequestBody Film film) {
             return this.service.getFilms(film);
     }
 
@@ -70,10 +70,10 @@ public class FilmController {
     }
 
     @DeleteMapping("/remove")
-    public Boolean remove(
+    public List<Film> remove(
         @RequestParam(name="title", required=false) @Validated String title, 
         @RequestParam(name="genre", required=false) @Validated String genre, 
         @RequestParam(name="year", required=false) @Validated Integer year) {
-        return this.service.remove(title, genre, year);
+        return this.service.remove(new Film(year, title, genre));
     }
 }

@@ -48,8 +48,11 @@ public class FilmServiceDB implements FilmService {
     }
 
     @Override
-    public Boolean remove(String title, String genre, Integer year) {
-        return false;
+    public List<Film> remove(Film f) {
+        
+        List<Film> filmsRemoved = this.getFilms(f);
+        this.repo.deleteAll(filmsRemoved);
+        return filmsRemoved;
     }
 
     @Override
