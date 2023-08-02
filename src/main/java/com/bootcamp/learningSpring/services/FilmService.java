@@ -2,8 +2,6 @@ package com.bootcamp.learningSpring.services;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.Query;
-
 import com.bootcamp.learningSpring.domain.Film;
 
 public interface FilmService {
