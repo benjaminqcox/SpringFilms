@@ -65,4 +65,10 @@ public class FilmServiceList implements FilmService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getFilmsByTitle'");
     }
+
+    @Override
+    public Film updateFilmById(Integer id, String title, String genre, Integer year) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updateFilmById'");
+    }
 }

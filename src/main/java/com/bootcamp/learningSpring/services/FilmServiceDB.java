@@ -49,7 +49,6 @@ public class FilmServiceDB implements FilmService {
 
     @Override
     public List<Film> remove(Film f) {
-        
         List<Film> filmsRemoved = this.getFilms(f);
         this.repo.deleteAll(filmsRemoved);
         return filmsRemoved;
@@ -64,4 +63,14 @@ public class FilmServiceDB implements FilmService {
     public List<Film> getFilmsByTitle(String title) {
         return this.repo.findByTitleContainsIgnoreCase(title);
     }
+
+    public Film updateFilmById(Integer id, String title, String genre, Integer year) {
+        Film filmToUpdate = this.repo.findById(id).orElseThrow(FilmNotFoundException::new);
+        if (title != null) filmToUpdate.setTitle(title);
+        if (genre != null) filmToUpdate.setGenre(genre);
+        if (year != null) filmToUpdate.setYear(year);
+        return this.repo.save(filmToUpdate);
+    }
+
+    
 }

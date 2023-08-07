@@ -22,4 +22,6 @@ public interface FilmService {
 
     public List<Film> remove(Film f);
 
+    public Film updateFilmById(Integer id, String title, String genre, Integer year);
+
 }

@@ -81,4 +81,13 @@ public class Film {
         return "Film: \n\ttitle: " + getTitle() + "\n\tYear: " + getYear() + "\n\tGenre: " + getGenre();
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;  
+        // ^ same as but more generic than -> !(o instanceof Film)
+        Film film = (Film) o;
+        return id == film.id && year == film.year && title.equals(film.title) && genre.equals(film.genre);
+    }
 }
