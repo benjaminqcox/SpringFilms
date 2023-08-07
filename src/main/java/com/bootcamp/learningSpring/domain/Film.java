@@ -27,8 +27,11 @@ public class Film {
     @Size(max=32)
     private String genre;
 
-    public Film() {
-
+    public Film(Integer id, Integer year, String title, String genre) {
+        this.id = id;
+        this.year = year;
+        this.title = title;
+        this.genre = genre;
     }
 
     public Film(Integer year, String title, String genre) {
@@ -37,11 +40,8 @@ public class Film {
         this.genre = genre;
     }
 
-    public Film(Integer id, Integer year, String title, String genre) {
-        this.id = id;
-        this.year = year;
-        this.title = title;
-        this.genre = genre;
+    public Film() {
+
     }
 
     public Integer getId() {
@@ -80,7 +80,6 @@ public class Film {
     public String toString() {
         return "Film: \n\ttitle: " + getTitle() + "\n\tYear: " + getYear() + "\n\tGenre: " + getGenre();
     }
-
 
     @Override
     public boolean equals(Object o) {

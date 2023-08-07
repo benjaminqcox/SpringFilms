@@ -19,15 +19,8 @@ import com.bootcamp.learningSpring.domain.Film;
 import com.bootcamp.learningSpring.services.FilmService;
 
 @RestController
-@RequestMapping("films/")
+@RequestMapping("/films")
 public class FilmController {
-    
-    /*
-
-    public Film removeFilmById(Integer id);
-
-    public Boolean remove(String title, String genre, Integer year);
-     */
 
     private FilmService service;
 

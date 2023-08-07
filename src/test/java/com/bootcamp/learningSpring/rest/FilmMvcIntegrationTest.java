@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @AutoConfigureMockMvc
 @Sql(scripts={"classpath:film-schema.sql", "classpath:film-data.sql"}, executionPhase=Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @ActiveProfiles("test")
-public class FilmMvcTest {
+public class FilmMvcIntegrationTest {
     @Autowired
     private MockMvc mvc;
 
